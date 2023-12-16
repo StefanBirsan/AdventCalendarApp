@@ -1,66 +1,69 @@
-import React from 'react';
-import { View, StyleSheet, Text, ImageBackground, TouchableOpacity } from 'react-native';
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import AdventScreen from "./adventscreen";
+import AdventScreen2 from "./adventscreen2";
+import { createStackNavigator } from "@react-navigation/stack";
+import Ecransmek from "./pushEcran";
+import { Ionicons } from '@expo/vector-icons';
+import { Text } from 'react-native';
 
-const Ecransmek = ({ navigation, route }) => {
+const Tab = createMaterialTopTabNavigator();
+const BottomTab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+const TopTab = () => {
     return (
-        <ImageBackground
-            source={require('./assets/backSmek.png')}
-            style={styles.container}
-        >
-            <View style={styles.content}>
-                <Text style={styles.dayText}>{route.params.day}</Text>
+        <Tab.Navigator tabBar={() => null}>
+            <Tab.Screen name="AdventCal" component={AdventScreen} options={{ swipeEnabled: true }} />
+            <Tab.Screen name="AdventCal2" component={AdventScreen2} options={{ swipeEnabled: true }} />
+        </Tab.Navigator>
+    )
+};
 
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => navigation.replace("Advent Calendar")}
-                >
-                    <Text style={styles.buttonText}>Replace</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                    style={[styles.button, styles.resetButton]}
-                    onPress={() => AsyncStorage.clear()}
-                >
-                    <Text style={styles.buttonText}>Reset</Text>
-                </TouchableOpacity>
-            </View>
-        </ImageBackground>
-    );
+const BottomTabScreen = () => {
+    return (
+        <BottomTab.Navigator>
+            <BottomTab.Screen
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="snow" size={size} color={"black"} />
+                    ),
+                    tabBarLabel: ({ focused, color }) => {
+                        const labelStyle = {
+                            color: focused ? 'black' : 'gray',
+                        };
+                        return <Text style={labelStyle}>Advent</Text>;
+                    },
+                }}
+                name={"Advent"}
+                component={TopTab}
+            />
+        </BottomTab.Navigator>
+    )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        resizeMode: 'cover',
-        justifyContent: 'center',
-    },
-    content: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    dayText: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: 'white',
-        marginBottom: 20,
-    },
-    button: {
-        backgroundColor: '#3498db',
-        paddingVertical: 15,
-        paddingHorizontal: 30,
-        borderRadius: 10,
-        marginBottom: 20,
-    },
-    resetButton: {
-        backgroundColor: '#e74c3c', // Different color for reset button
-    },
-    buttonText: {
-        color: 'white',
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-});
-
-export default Ecransmek;
+export default function App() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen
+                    options={{
+                        headerShown: false
+                    }}
+                    name="Advent Calendar"
+                    component={BottomTabScreen}
+                />
+                <Stack.Screen
+                    name={"ecransmek"}
+                    component={Ecransmek}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}

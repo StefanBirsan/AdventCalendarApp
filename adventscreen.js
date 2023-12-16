@@ -3,29 +3,58 @@
 import React from 'react';
 import {View, StyleSheet, Text, ImageBackground} from 'react-native';
 import YourComponent from "./daybutton";
+import {pateu} from "./sugestiv";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useState, useEffect } from 'react';
+
 
 const AdventScreen = () => {
+
+    const [storageData, setStorageData] = useState([]);
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const jsonValue = await AsyncStorage.getItem('advent_day')
+                let output = jsonValue != null ? JSON.parse(jsonValue) : null;
+
+                if (output != null) {
+                    output = Object.keys(output);
+
+                }
+                else
+                {
+                    output = [];
+                }
+                return output;
+
+            } catch(e) {
+                // error reading value
+            }
+        }
+        getData().then((output) => {
+            setStorageData(output);
+            console.log("pita cu pateu")
+        })
+    }, []);
+
     return (
         <ImageBackground source={require('./assets/adventback.png')} style={styles.background}>
             <View style={styles.container}>
-                <YourComponent threshold={1} left={20} top={-760} />
-                <YourComponent threshold={2} left={120} top={-670} />
-                <YourComponent threshold={3} left={210} top={-750} />
-                <YourComponent threshold={4} left={310} top={-690} />
-                <YourComponent threshold={5} left={5} top={-620} />
-                <YourComponent threshold={6} left={120} top={-559} />
-                <YourComponent threshold={7} left={290} top={-580} />
-                <YourComponent threshold={8} left={20} top={-480} />
-                <YourComponent threshold={9} left={120} top={-400} />
-                <YourComponent threshold={10} left={210} top={-470} />
-                <YourComponent threshold={11} left={310} top={-400} />
-                <YourComponent threshold={12} left={5} top={-320} />
-                <YourComponent threshold={13} left={140} top={-290} />
-                <YourComponent threshold={14} left={290} top={-270} />
-                <YourComponent threshold={15} left={20} top={-190} />
-                <YourComponent threshold={16} left={120} top={-130} />
-                <YourComponent threshold={17} left={210} top={-200} />
-                <YourComponent threshold={18} left={310} top={-130} />
+                {pateu.map((item, index) => {
+
+                    let colorsmek="#c4180c"
+
+                    const idee = index + 1;
+
+                    if (storageData.includes(item.threshold.toString())) {
+                        colorsmek="#00ff00"
+                    }
+                    return (
+                        <YourComponent key={index} threshold={item.threshold} left={item.left} top={item.top} backgroundColor={colorsmek} text="Custom Text" lineColor={"green"}/>
+                    )
+                })}
+
 
 
             </View>

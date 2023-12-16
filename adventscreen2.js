@@ -1,19 +1,53 @@
-import React from 'react';
-import {View, StyleSheet, Text, ImageBackground} from 'react-native';
+import React, {useEffect} from 'react';
+import {View, StyleSheet, ImageBackground} from 'react-native';
 import YourComponent from "./daybutton";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {AS2buttons} from "./AS2buttons";
+import { useState } from 'react';
 
 const AdventScreen2 = () => {
+
+    const [storageData, setStorageData] = useState([]);
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const jsonValue = await AsyncStorage.getItem('advent_day')
+                let output = jsonValue != null ? JSON.parse(jsonValue) : null;
+
+                if (output != null) {
+                    output = Object.keys(output);
+
+                }
+                else
+                {
+                    output = [];
+                }
+                return output;
+
+            } catch(e) {
+                // error reading value
+            }
+        }
+        getData().then((output) => {
+            setStorageData(output)
+        })
+    }, []);
+
     return (
-        <ImageBackground source={require('./assets/adventback.png')} style={styles.background}>
+        <ImageBackground source={require('./assets/adventback2.png')} style={styles.background}>
             <View style={styles.container}>
+                {AS2buttons.map((item, index) => {
 
-                <YourComponent threshold={19} left={20} top={-750} />
-                <YourComponent threshold={20} left={290} top={-650} />
-                <YourComponent threshold={21} left={290} top={-370} />
-                <YourComponent threshold={22} left={20} top={-240} />
-                <YourComponent threshold={23} left={120} top={-440} />
-                <YourComponent threshold={24} left={160} top={-600} />
+                    let colorsmek="#c4180c"
 
+                    if (storageData.includes(item.threshold.toString())) {
+                        colorsmek="#00ff00"
+                    }
+                    return (
+                        <YourComponent key={index} threshold={item.threshold} left={item.left} top={item.top} backgroundColor={colorsmek} text="Custom Text" lineColor={"green"}/>
+                    )
+                })}
             </View>
         </ImageBackground>
     );

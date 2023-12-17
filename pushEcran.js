@@ -41,7 +41,7 @@ const Ecransmek = ({ navigation, route }) => {
 
                 <RecipePage overlayText={listaids[route.params.day - 1].ingredients} />
 
-                <KSpacer h={50} />
+                <KSpacer h={40} />
 
                 <MoviesXmas
 

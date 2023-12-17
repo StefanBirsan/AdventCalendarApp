@@ -40,9 +40,8 @@ const YourComponent = ({ threshold, left, top, backgroundColor, text, lineColor 
                 if (currentDay >= threshold) {
                     navigator.push("ecransmek",{day: threshold})
                     set(threshold.toString());
-                    Alert.alert(`${text}!`);
                 } else {
-                    Alert.alert(`Button disabled. Current day is not greater than the threshold: ${threshold}`);
+                    Alert.alert(`It is not yet time for day: ${threshold}`);
                 }
             }}
             disabled={false}

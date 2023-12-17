@@ -16,7 +16,7 @@ const listaids = [
     },
     { // index 1
         ingredients:
-            `100g dark chocolate
+            `   100g chocolate
              500ml whole milk
              2 cinnamon sticks
              1 teaspoon vanilla
@@ -29,7 +29,7 @@ const listaids = [
     },
     { // index 2
         ingredients:
-            `500 g biscuit populari
+            `      500 g biscuit populari
              200 ml lapte
              150 g unt
              100 g stafide
@@ -58,16 +58,16 @@ const listaids = [
     },
     { // index 4
         ingredients:
-            `All-Purpose Flour
-             Ground Ginger
-             Ground Cinnamon
-             Ground Cloves
-             Salt
-             Baking Soda
-             Butter
-             Brown Sugar
-             Egg
-             Molasses`
+                            `All-Purpose Flour
+                        Ground Ginger
+                        Ground Cinnamon
+                        Ground Cloves
+                        Salt
+                        Baking Soda
+                        Butter
+                        Brown Sugar
+                        Egg
+                        Molasses`
         ,
         ytid: "brZVMqRlc5w",
         title: "Classic Gingerbread Cookies",
@@ -80,10 +80,9 @@ const listaids = [
            200 g unt topit
            15 g drojdie uscata
            6 galbenusuri
-           2 linguri coaja de lamaie
-           2 linguri pasta de vanilie
-           2 linguri coaja de portocala
-           sare
+               2 linguri coaja de lamaie
+               2 linguri pasta de vanilie
+
         `,
         ytid: "5y6OyWyyjDg",
         title: "Cozonac pufos",
@@ -120,13 +119,13 @@ const listaids = [
     { // index 8
 
         ingredients: `
-          2 cups chicken
-          1/2 cup Bell pepper
-          1/2 cup celery
-          3/4 cup dried cranberries
-          1/2 cup onion
-          1/2 cup pecans
-          spices
+              2 cups chicken
+              1/2 cup Bell pepper
+              1/2 cup celery
+              3/4 cup dried cranberries
+              1/2 cup onion
+              1/2 cup pecans
+              spices
         `,
         ytid: "9RJGU-ElH3M",
         title: "Holiday Chicken Salad",
@@ -143,25 +142,22 @@ const listaids = [
            Onion 7 OZ
            Pepper 5 OZ
            Olive oil 2 fl Oz
-           Salt 2 tsp.
-           Thyme
         `,
-        ytid: "5y6OyWyyjDg",
+        ytid: "CwOzgurHlts",
         title: "Ratatouille",
     },
 
     { // index 10
 
         ingredients: `
-           Chicken 1.5 kg
-           Onion 2
-           flour 2 tbsp
-           butter 2 tbsp
-           cream 1 cup
-           wine 1 cup
-           thyme
-           broth
-              
+                           Chicken 1.5 kg
+                           Onion 2
+                           flour 2 tbsp
+                           butter 2 tbsp
+                           cream 1 cup
+                           wine 1 cup
+                           thyme
+                           broth
         `,
         ytid: "sqelF9LaAlQ",
         title: "Chicken Fricassee",
@@ -170,12 +166,12 @@ const listaids = [
     { // index 11
 
         ingredients: `
-           ¼ Red pepper, chopped finely
-           ¼ Yellow pepper, chopped finely
-           1 small pickled gherkin, chopped finely
-           50g Butter
-           1 Tsp Garlic powder
-           12 Baby potatoes
+               ¼ Red pepper
+               ¼ Yellow pepper
+               1 small pickled gherkin
+               50g Butter
+               1 Tsp Garlic powder
+               12 Baby potatoes
            `,
         ytid: "Tgc6-agi_BU",
         title: "Hasselback potatoes",
@@ -192,8 +188,7 @@ const listaids = [
            280g unsalted  butter 
            285g brown sugar 
            2 eggs 
-           3 egg yolks
-           450g chopped chocolater
+             450g chopped chocolater
         `,
             ytid: "NYH1Z7TUSEI",
             title: "Coco Chip Cookies",
@@ -201,13 +196,13 @@ const listaids = [
 
         { // index 13
             ingredients: `
-            700g small new season NZ potatoes
-            300g frozen peas or baby peas
-            2 rashers bacon, streaky
-            1 bunch fresh mint leaves, half chopped
+            700g small potatoes
+            300g frozen
+            2 rashers bacon
+            1 bunch fresh mint leaves
             1/3 cup aioli or mayo
             1/3 cup natural yoghurt
-            1 lemon, juice and zest
+            1 lemon
             Salt and pepper
             `,
             ytid: "K2v_1J5YIkY",
@@ -216,12 +211,12 @@ const listaids = [
 
         { // index 14
             ingredients: `
-            1 kg sweat potatoes
-            1 cup heavy cream
-            1/2 stick butter
-            2 cloves garlic
-            parsley
-            spices
+                1 kg sweat potatoes
+                1 cup heavy cream
+                1/2 stick butter
+                2 cloves garlic
+                parsley
+                spices
             `,
             ytid: "iXQUjH3qN8M",
             title: "Sweet Potato Gratin",
@@ -229,16 +224,13 @@ const listaids = [
 
         { // index 15
             ingredients: `
-            1 whole chicken 
+          1 whole chicken 
             2 tbsp good quality lard 
             2 shallots 
             20 g  unsalted butter
             50 ml cognac 
             5 button mushrooms
             150 g smoked bacon
-            3 bay leaves
-            750 ml of amber ale 
-            1 or 2 tbsp heavy cream
             `,
             ytid: "89k6t8oGLqw",
             title: "Chicken in Beer",
@@ -250,13 +242,10 @@ const listaids = [
             ½ tsp salt
             ½ tsp pepper
             2 tbsp vegetable oil
-            8 chestnut mushrooms - sliced
-            1 small onion - peeled and chopped finely
-            3 cloves garlic - peeled and minced
-            ¼ tsp dried thyme - or 2 sprigs fresh thyme
-            ½ cup (120ml) white wine
-            ½ cup (120ml) chicken stock
-            ¾ cup (180 ml) double/heavy cream
+            8 chestnut mushrooms 
+            1 small onion 
+            3 cloves garlic 
+            2 sprigs fresh thyme
             `,
             ytid: "KxBElWZq_ZQ",
             title: "Chicken in Creamy Wine",
@@ -277,5 +266,54 @@ const listaids = [
             ytid: "MTdSJ7c0L-M",
             title: "Sarmale de post",
         },
+
+    { // index 18
+        ingredients: `
+           mint candy cane
+           hot fudge source
+           3 scoups chocolate ice cream
+           1 cup milk
+           whipped cream
+        `,
+        ytid: "1bGqunscou8",
+        title: "Candy Cane Milkshake",
+    },
+
+    { // index 19
+        ingredients:
+        `
+        Do the roar 
+        watch Shrek again!
+        `,
+
+        ytid: "1bGqunscou8",
+        title: "Do the roar",
+
+    },
+
+    {
+        //index 20
+        ingredients: `
+        1 cup heavy cream
+        1 cup milk
+        1/2 cup sugar
+        2 eggs
+        1/2 tsp vanilla
+        `,
+        ytid: "Zse0VhzmdW4",
+        title: "Mini Cinnamon Rolls",
+    },
+
+    {
+        //index 21
+        ingredients: `
+        300g nutella
+        aluat de foietaj
+        a good time
+        `,
+
+        ytid: "y0PAk3lArjg",
+        title: "Nutella Pastry",
+    }
 
 ]

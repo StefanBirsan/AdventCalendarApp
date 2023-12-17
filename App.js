@@ -8,6 +8,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Ecransmek from "./pushEcran";
 import { Ionicons } from '@expo/vector-icons';
 import { Text } from 'react-native';
+import FullscreenImageScreen from "./merry_xmas_screen";
 
 const Tab = createMaterialTopTabNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -33,13 +34,29 @@ const BottomTabScreen = () => {
                     ),
                     tabBarLabel: ({ focused, color }) => {
                         const labelStyle = {
-                            color: focused ? 'black' : 'gray',
+                            color: focused ? 'red' : 'black',
                         };
                         return <Text style={labelStyle}>Advent</Text>;
                     },
                 }}
                 name={"Advent"}
                 component={TopTab}
+            />
+            <BottomTab.Screen
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({ color, size }) => (
+                        <Ionicons name="gift" size={size} color={"black"} />
+                    ),
+                    tabBarLabel: ({ focused, color }) => {
+                        const labelStyle = {
+                            color: focused ? 'red' : 'black',
+                        };
+                        return <Text style={labelStyle}>Gifts</Text>;
+                    },
+                }}
+                name={"Gifts"}
+                component={FullscreenImageScreen}
             />
         </BottomTab.Navigator>
     )

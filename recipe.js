@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         position: 'absolute',
-        top: 46 , // Adjust the top position as needed
+        top: 30 , // Adjust the top position as needed
         textAlign: 'center', // Center the text horizontally
         left: -50,
     },

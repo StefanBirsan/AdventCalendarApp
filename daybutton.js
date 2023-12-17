@@ -38,7 +38,7 @@ const YourComponent = ({ threshold, left, top, backgroundColor, text, lineColor 
             onPress={() => {
 
                 if (currentDay >= threshold) {
-                    navigator.push("Ecransmek",{day: threshold})
+                    navigator.push("ecransmek",{day: threshold})
                     set(threshold.toString());
                     Alert.alert(`${text}!`);
                 } else {

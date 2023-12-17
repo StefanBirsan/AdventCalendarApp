@@ -48,7 +48,7 @@ const AdventScreen = () => {
                     const idee = index + 1;
 
                     if (storageData.includes(item.threshold.toString())) {
-                        colorsmek="#00ff00"
+                        colorsmek="#913724"
                     }
                     return (
                         <YourComponent key={index} threshold={item.threshold} left={item.left} top={item.top} backgroundColor={colorsmek} text="Custom Text" lineColor={"green"}/>
